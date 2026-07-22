@@ -4,6 +4,11 @@
     --secondary: #BAE0FF;
     --white: #FFFFFF;
 
+    /*　カレンダーカラー */
+    --cblue: #3182ce;
+    --cred:#e53e3e;
+    --cblack:#2d3748;
+
     /* アイコン */
     --inactive: #000000;
     --active: #FFFFFF;

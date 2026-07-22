@@ -1,0 +1,116 @@
+.calendar-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.calendar-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.ok-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 22px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 選択中の日のスタイル（青い正方形の枠線で囲う） */
+.react-calendar__tile--active {
+    background: transparent !important;
+    border: 2px solid var(--cblue) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    color: var(--cblue) !important;
+    font-weight: bold;
+}
+
+/* 枠線を正方形に保つ調整 */
+.react-calendar__tile {
+    aspect-ratio: 1 / 1 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 日曜日を赤にする */
+.react-calendar__month-view__weekdays__weekday:nth-child(7) abbr {
+    color: var(--cred) !important;
+}
+
+/* 土曜日を青にする */
+.react-calendar__month-view__weekdays__weekday:nth-child(6) abbr {
+    color: var(--cblue) !important;
+}
+
+/* 月~金の列を黒にする */
+.react-calendar__month-view__days__day {
+    color: var(--cblack) !important;
+}
+
+/* 土曜日の列の数字を青にする */
+.react-calendar__month-view__days__day:nth-child(7n-1) {
+    color: var(--cblue) !important;
+}
+
+/* 日曜日の列の数字を赤にする */
+.react-calendar__month-view__days__day:nth-child(7n) {
+    color: var(--cred) !important;
+}
+
+/* ナビゲーション全体 */
+.react-calendar__navigation {
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: var(--secondary);
+}
+
+.react-calendar__navigation__label {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.react-calendar__navigation button:disabled {
+    background-color: var(--secondary);
+    color: var(--cblack);
+    opacity: 1;
+}
+
+/* ナビゲーションボタンのクリック・タップ時の痕跡を消す */
+/* ナビゲーションボタン（矢印・年月） */
+.react-calendar__navigation button {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    color: var(--cblack);
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* マウスを乗せたとき、クリックした状態が残っているとき、押し込んでいる瞬間 */
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus,
+.react-calendar__navigation button:active {
+    background-color: var(--secondary) !important;
+}
+
+.react-calendar__navigation button:disabled:focus {
+    background-color: var(--secondary) !important;
+    outline: none !important;
+}

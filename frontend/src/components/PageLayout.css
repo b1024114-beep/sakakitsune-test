@@ -13,4 +13,5 @@
     flex-direction: column;
 
     overflow-y: auto;
+    background-color: var(--secondary);
 }

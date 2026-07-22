@@ -1,5 +1,5 @@
 .header {
-    height: 15vh;
+    height: 10vh;
     background-color: var(--primary);
 
     display: flex;
@@ -7,9 +7,22 @@
     align-items: center;
 
     color: var(--text-white);
+
+    position: relative;
 }
 
 .header h1 {
     margin: 0;
     font-size: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+
+    border: none;
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
 }

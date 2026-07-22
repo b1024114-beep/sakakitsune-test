@@ -1,0 +1,81 @@
+/* ヘッダー全体 */
+.compare-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+    background: var(--secondary);
+}
+
+
+/* 上段 */
+.compare-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 種類 */
+.compare-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.compare-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.sensor-box {
+    padding: 4px 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: white;
+    font-size: 15px;
+}
+
+
+/* 比較期間 */
+.compare-period {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.period-tag {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+/* 設定ボタン */
+.compare-setting-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.setting-button {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* グラフ表示エリア */
+.compare-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}

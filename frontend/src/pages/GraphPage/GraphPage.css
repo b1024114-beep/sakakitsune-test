@@ -1,0 +1,82 @@
+/* 種類選択と期間選択の背景色 */
+.graph-menu{
+
+    background: var(--secondary);
+
+    padding-top: 12px;
+    padding-bottom: 10px;
+
+}
+
+/* 全体を縦に並べる */
+.graph-select-area,
+.graph-range-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+
+/* 種類選択ボタン */
+.graph-select-button {
+    width: 180px;
+    height: 30px;
+
+    background: var(--white);
+    color: var(--black);
+
+    border: 1px solid gray;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    text-align: center; /* 文字を中央寄せにする */
+    text-align-last: center; /* Safari等のブラウザ対策 */
+}
+
+/* 年月日の外枠 */
+.graph-range-area {
+    width: 60%;
+    height: 30px;
+
+    margin: 12px auto 0;
+
+    border: 1px solid gray;
+}
+
+/* 年・月・日 */
+.graph-range-button {
+    flex: 1;
+
+    border: none;
+    border-right: 1px solid gray;
+
+    background: var(--white);
+    color: var(--black);
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 一番右だけ線を消す */
+.graph-range-button:last-child {
+    border-right: none;
+}
+
+/* 選択中 */
+.graph-range-button.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* グラフエリア */
+.graph-area {
+    flex: 1;
+
+    margin-top: 5px;
+    padding: 10px;
+
+    background: var(--white);
+    overflow-x:auto;
+
+}

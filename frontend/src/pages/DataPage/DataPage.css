@@ -1,25 +1,81 @@
 /* 日付・時間表示 */
 .date-area {
     height: 30vh;
-
+    /* padding: 40px 20px; */
     background: var(--secondary);
-
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    position: relative;
+    /* min-height: 140px; */
+}
+
+.date-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+}
+
+.date-text {
+    font-size: 1.7rem;
 }
 
 /* データ一覧 */
 .sensor-data-area {
     flex: 1;
-
     background: var(--white);
-
     padding: 20px;
 }
 
 .data-area p {
     font-size: 22px;
-
     margin: 20px 0;
+}
+
+/* 右にデータ（単位）を表示する */
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.data-row span {
+    font-size: 20px;
+}
+
+/* カレンダーアイコンの色設定 */
+.calendar-link {
+    color: var(--inactive);
+    text-decoration: none;
+}
+
+/* リロードボタン表示 */
+.reload-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: var(--inactive);
+    cursor: pointer;
+}
+
+/*時間選択の見た目*/
+.time-select {
+    background: var(--white);
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid var(--inactive);
+}
+
+.sensor-name {
+    font-size: 10px;
+    color: var(--inactive);
+    margin-top: 1px;
 }

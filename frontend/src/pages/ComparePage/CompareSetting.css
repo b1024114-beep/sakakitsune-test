@@ -1,0 +1,242 @@
+.compare-setting-area {
+    flex: 1;
+    background: var(--secondary);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ラベル */
+.setting-row label {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+
+    width: 52px;
+    height: 28px;
+}
+
+/* チェックボックスは非表示 */
+.switch input {
+    display: none;
+}
+
+/* 背景 */
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #ddd;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+/* 丸 */
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+/* ONになった時 */
+.switch input:checked+.slider {
+    background: var(--primary);
+}
+
+/* 丸が移動 */
+.switch input:checked+.slider::before {
+    transform: translateX(24px);
+}
+
+/* セクション */
+.setting-section {
+    margin-bottom: 24px;
+}
+
+/* 見出し */
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+    color: var(--text);
+}
+
+/* ラジオボタンを2列に並べる */
+.radio-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 12px;
+    column-gap: 24px;
+}
+
+/* ラベル */
+.radio-grid label {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 17px;
+}
+
+/* 横線 */
+.setting-divider {
+    border: none;
+    border-top: 2px solid var(--text);
+    margin: 20px 0;
+}
+
+/* グラフ期間 */
+.period-radio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* ラベル */
+.period-radio label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+}
+
+/* 期間カード */
+.period-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 色丸 */
+.period-color {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* 日付 */
+.period-card input {
+    flex: 1;
+    height: 36px;
+    font-size: 16px;
+    padding: 0 8px;
+}
+
+/* ×ボタン */
+.delete-button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* ＋期間追加 */
+.add-period-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* OKボタンを右寄せ */
+.ok-button-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+/* OKボタン */
+.ok-button {
+    width: 100px;
+    height: 42px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* エラーメッセージ */
+.error-message {
+    margin-top: 10px;
+
+    color: #d32f2f;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+/*  */
+.period-select-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    flex:1;
+
+}
+
+/*  */
+.period-select-area select{
+
+    width:58px;
+
+    height:32px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    padding: 2px;
+
+}
+
+/*  */
+.period-select-area select:disabled{
+
+    background:#dddddd;
+
+    color:#666666;
+
+}

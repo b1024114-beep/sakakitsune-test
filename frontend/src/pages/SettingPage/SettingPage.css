@@ -1,0 +1,82 @@
+/* 1. ページ全体を水色の背景にして、程よい余白を作る */
+.setting-page-container {
+  background-color: var(--secondary); /* colors.css の水色 #BAE0FF */
+  /* min-height: 100%; */
+  padding: 20px 0;                    /* 上下の余白 */
+  display: flex;
+  flex-direction: column;
+  gap: 0px;                          /* 項目と項目の間のすき間 */
+}
+
+/* 2. 1行ごとの設定 */
+.setting-row {
+  display: flex;
+  justify-content: space-between;     /* ★ラベルを左端、セレクトを右端に配置 */
+  align-items: center;                /* 上下の中央揃え */
+  padding: 10px 24px;                 /* 左右に24pxの余白を作り、画面端から少し離す */
+}
+
+/* 3. 左側のラベルテキスト */
+.setting-row label {
+  color: var(--text);                 /* colors.css の黒文字 #000000 */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 4. 右側のセレクトボックス */
+.setting-row select {
+  width: 140px;                       /* ★横幅を140pxに固定することで、右側で縦一列にきれいに揃う */
+  height: 40px;
+  background-color: var(--white);     /* colors.css の白 #FFFFFF */
+  color: var(--text);                 /* 黒文字 */
+  border: none;                       /* 枠線はなし */
+  border-radius: 8px;                 /* 少し角を丸くして柔らかい印象に */
+  padding: 0 12px;
+  font-size: 16px;
+  outline: none;                      /* クリックした時に出る黒い外枠線を消す */
+  cursor: pointer;
+  
+  /* セレクトボックスのブラウザ標準デザインをリセット（お好みで） */
+  text-align: center;                 /* 文字を中央寄せにする */
+}
+
+/* DOセンサと水温の間の横線 */
+.setting-divider {
+  border: none;
+  border-top: 2px solid var(--primary); /* メインカラー（#3D76A4）の線 */
+  margin: 8px 24px;                     /* 左右の余白を他の行（24px）と揃える */
+}
+
+/* 5. 設定項目のタイトル（「センサー設定」など） */
+.setting-title {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 24px;   /* 左端をsetting-rowと揃える */
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.save-button-area {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 35px;
+}
+
+/* ボタンのデザイン */
+.save-button {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--primary);
+    color: var(--text-white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+  opacity: 0.9;
+}
