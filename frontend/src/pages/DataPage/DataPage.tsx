@@ -69,9 +69,7 @@ export default function DataPage() {
   useEffect(() => {
     const fetchSensorData = async () => {
       try {
-        const response = await fetch(
-          "https://sakamoto-sensors-test.vercel.app/api/sensors"
-        );
+        const response = await fetch("/api/sensors");
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
