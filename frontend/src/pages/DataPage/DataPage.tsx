@@ -39,6 +39,9 @@ export default function DataPage() {
   const [salinity, setSalinity] = useState<number | null>(null);
   const [doValue, setDoValue] = useState<number | null>(null);
 
+  // 統合APIから取得した全センサーデータを保存
+  const [sensorData, setSensorData] = useState<any[]>([]);
+
   // calendarPageから日付、時間を受け取る
   const location = useLocation();
   const navigate = useNavigate();
@@ -66,89 +69,106 @@ export default function DataPage() {
   );
 
   // 統合センサーAPIからデータを取得
-  useEffect(() => {
-    const fetchSensorData = async () => {
-      try {
-        const response = await fetch("/api/sensors");
+  const fetchSensorData = async () => {
+    try {
+      const response = await fetch("/api/sensors");
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        console.log("統合APIから取得したデータ:", data);
-        console.log("選択中の日時:", selectedDate, time);
-
-        // 選択した日付・時間をDateに変換
-        const [hours, minutes] = time.split(":").map(Number);
-
-        const targetDate = new Date(selectedDate);
-        targetDate.setHours(hours, minutes, 0, 0);
-
-        const targetTime = targetDate.getTime();
-
-        // 選択日時に最も近いデータを探す
-        let targetData = null;
-        let nearestDiff = Infinity;
-
-        for (const item of data) {
-          const itemTime = new Date(item.datetime).getTime();
-          const diff = Math.abs(itemTime - targetTime);
-
-          if (diff < nearestDiff) {
-            nearestDiff = diff;
-            targetData = item;
-          }
-        }
-
-        // 5分以上離れている場合はデータなし
-        if (!targetData || nearestDiff > 5 * 60 * 1000) {
-          console.log("選択日時に近いデータがありません");
-
-          setOutsideTemp(null);
-          setWaterTemp(null);
-          setSalinity(null);
-          setDoValue(null);
-
-          return;
-        }
-
-        console.log("選択日時に最も近いデータ:", targetData);
-
-        // 気温
-        setOutsideTemp(targetData.outsideTemp);
-
-        // 水温
-        setWaterTemp(targetData.waterTemp);
-
-        // 塩分濃度
-        setSalinity(targetData.salinity);
-
-        // 溶存酸素
-        if (doSensor === "DO01") {
-          setDoValue(targetData.oxygen1);
-        } else if (doSensor === "DO03") {
-          setDoValue(targetData.oxygen3);
-        } else {
-          setDoValue(null);
-        }
-
-      } catch (error) {
-        console.error(
-          "センサーデータの取得に失敗しました:",
-          error
-        );
-
-        setOutsideTemp(null);
-        setWaterTemp(null);
-        setSalinity(null);
-        setDoValue(null);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
 
+      const data = await response.json();
+
+      console.log("統合APIから取得したデータ:", data);
+
+      // 全データを保存
+      setSensorData(data);
+
+      return data;
+    } catch (error) {
+      console.error(
+        "センサーデータの取得に失敗しました:",
+        error
+      );
+
+      setSensorData([]);
+
+      setOutsideTemp(null);
+      setWaterTemp(null);
+      setSalinity(null);
+      setDoValue(null);
+
+      return [];
+    }
+  };
+
+  // ページを開いたときに1回だけAPIからデータを取得
+  useEffect(() => {
     fetchSensorData();
-  }, [selectedDate, time, doSensor]);
+  }, []);
+
+  // 選択した日付・時間に対応するデータを表示
+  useEffect(() => {
+    if (sensorData.length === 0) {
+      return;
+    }
+
+    console.log("選択中の日時:", selectedDate, time);
+
+    // 選択した日付・時間をDateに変換
+    const [hours, minutes] = time.split(":").map(Number);
+
+    const targetDate = new Date(selectedDate);
+    targetDate.setHours(hours, minutes, 0, 0);
+
+    const targetTime = targetDate.getTime();
+
+    // 選択日時に最も近いデータを探す
+    let targetData = null;
+    let nearestDiff = Infinity;
+
+    for (const item of sensorData) {
+      const itemTime = new Date(item.datetime).getTime();
+      const diff = Math.abs(itemTime - targetTime);
+
+      if (diff < nearestDiff) {
+        nearestDiff = diff;
+        targetData = item;
+      }
+    }
+
+    // 5分以上離れている場合はデータなし
+    if (!targetData || nearestDiff > 5 * 60 * 1000) {
+      console.log("選択日時に近いデータがありません");
+
+      setOutsideTemp(null);
+      setWaterTemp(null);
+      setSalinity(null);
+      setDoValue(null);
+
+      return;
+    }
+
+    console.log("選択日時に最も近いデータ:", targetData);
+
+    // 気温
+    setOutsideTemp(targetData.outsideTemp);
+
+    // 水温
+    setWaterTemp(targetData.waterTemp);
+
+    // 塩分濃度
+    setSalinity(targetData.salinity);
+
+    // 溶存酸素
+    if (doSensor === "DO01") {
+      setDoValue(targetData.oxygen1);
+    } else if (doSensor === "DO03") {
+      setDoValue(targetData.oxygen3);
+    } else {
+      setDoValue(null);
+    }
+  }, [sensorData, selectedDate, time, doSensor]);
 
   return (
     <PageLayout title="データ">
@@ -177,7 +197,7 @@ export default function DataPage() {
           {/* リロードボタン */}
           <button
             className="reload-button"
-            onClick={() => {
+            onClick={async () => {
               const now = new Date();
               const latestTime = getLatestTime();
 
@@ -191,6 +211,9 @@ export default function DataPage() {
                   time: latestTime,
                 },
               });
+
+              // 最新データを再取得
+              await fetchSensorData();
             }}
           >
             <Icons.RefreshCw size={24} />
