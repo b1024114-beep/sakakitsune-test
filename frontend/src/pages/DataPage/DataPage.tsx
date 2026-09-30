@@ -40,7 +40,11 @@ export default function DataPage() {
   const [doValue, setDoValue] = useState<number | null>(null);
 
   // 統合APIから取得した全センサーデータを保存
-  const [sensorData, setSensorData] = useState<any[]>([]);
+  const [sensorData, setSensorData] = useState<any[]>(() => {
+  const savedData = localStorage.getItem("sensorData");
+
+  return savedData ? JSON.parse(savedData) : [];
+});
 
   // calendarPageから日付、時間を受け取る
   const location = useLocation();
@@ -82,9 +86,11 @@ export default function DataPage() {
       console.log("統合APIから取得したデータ:", data);
 
       // 全データを保存
-      setSensorData(data);
+      // 全データを保存
+setSensorData(data);
+localStorage.setItem("sensorData", JSON.stringify(data));
 
-      return data;
+return data;
     } catch (error) {
       console.error(
         "センサーデータの取得に失敗しました:",
@@ -103,9 +109,12 @@ export default function DataPage() {
   };
 
   // ページを開いたときに1回だけAPIからデータを取得
-  useEffect(() => {
+  // 保存されたデータがない場合だけAPIから取得
+useEffect(() => {
+  if (sensorData.length === 0) {
     fetchSensorData();
-  }, []);
+  }
+}, []);
 
   // 選択した日付・時間に対応するデータを表示
   useEffect(() => {
