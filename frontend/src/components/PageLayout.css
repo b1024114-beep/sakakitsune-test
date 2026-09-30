@@ -13,5 +13,17 @@
     flex-direction: column;
 
     overflow-y: auto;
+    background-color: var(--white);
+
+    padding-bottom: 10vh;
+}
+
+/* 設定画面だけ背景水色 */
+.setting-page .page-content {
+    background-color: var(--secondary);
+}
+
+/* 比較設定画面だけ背景水色 */
+.compare-setting-page .page-content {
     background-color: var(--secondary);
 }

@@ -1,0 +1,315 @@
+{
+  "success": true,
+  "data": [
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-01T12:00:00+09:00",
+      "battery": 5.3,
+      "outsideTemp": 29.2,
+      "waterTemp": 25.9,
+      "conductivity": 5.35,
+      "salinity": 1.84,
+      "dissolvedOxygen": 7.6
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-02T12:00:00+09:00",
+      "battery": 5.2,
+      "outsideTemp": 28.9,
+      "waterTemp": 25.9,
+      "conductivity": 5.33,
+      "salinity": 1.81,
+      "dissolvedOxygen": 7.7
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-03T12:00:00+09:00",
+      "battery": 5.2,
+      "outsideTemp": 28.6,
+      "waterTemp": 26.2,
+      "conductivity": 5.34,
+      "salinity": 1.84,
+      "dissolvedOxygen": 7.6
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-04T12:00:00+09:00",
+      "battery": 5.29,
+      "outsideTemp": 28.1,
+      "waterTemp": 25.8,
+      "conductivity": 5.37,
+      "salinity": 1.84,
+      "dissolvedOxygen": 7.4
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-05T12:00:00+09:00",
+      "battery": 5.29,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.2,
+      "conductivity": 5.44,
+      "salinity": 1.83,
+      "dissolvedOxygen": 7.3
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-06T12:00:00+09:00",
+      "battery": 5.07,
+      "outsideTemp": 27.8,
+      "waterTemp": 26.1,
+      "conductivity": 5.48,
+      "salinity": 1.84,
+      "dissolvedOxygen": 7.5
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-07T12:00:00+09:00",
+      "battery": 5.07,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.0,
+      "conductivity": 5.41,
+      "salinity": 1.89,
+      "dissolvedOxygen": 7.3
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-08T12:00:00+09:00",
+      "battery": 5.28,
+      "outsideTemp": 28.3,
+      "waterTemp": 25.8,
+      "conductivity": 5.49,
+      "salinity": 1.85,
+      "dissolvedOxygen": 7.1
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-09T12:00:00+09:00",
+      "battery": 5.08,
+      "outsideTemp": 29.0,
+      "waterTemp": 26.1,
+      "conductivity": 5.44,
+      "salinity": 1.85,
+      "dissolvedOxygen": 7.2
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-10T12:00:00+09:00",
+      "battery": 5.2,
+      "outsideTemp": 29.1,
+      "waterTemp": 26.1,
+      "conductivity": 5.43,
+      "salinity": 1.83,
+      "dissolvedOxygen": 6.9
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-11T12:00:00+09:00",
+      "battery": 5.18,
+      "outsideTemp": 29.1,
+      "waterTemp": 25.7,
+      "conductivity": 5.39,
+      "salinity": 1.84,
+      "dissolvedOxygen": 6.9
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-12T12:00:00+09:00",
+      "battery": 5.24,
+      "outsideTemp": 28.4,
+      "waterTemp": 25.9,
+      "conductivity": 5.45,
+      "salinity": 1.82,
+      "dissolvedOxygen": 6.7
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-13T12:00:00+09:00",
+      "battery": 5.08,
+      "outsideTemp": 27.7,
+      "waterTemp": 26.2,
+      "conductivity": 5.38,
+      "salinity": 1.8,
+      "dissolvedOxygen": 6.9
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-14T12:00:00+09:00",
+      "battery": 5.24,
+      "outsideTemp": 27.6,
+      "waterTemp": 25.9,
+      "conductivity": 5.35,
+      "salinity": 1.85,
+      "dissolvedOxygen": 7.0
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-15T12:00:00+09:00",
+      "battery": 5.09,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.1,
+      "conductivity": 5.39,
+      "salinity": 1.87,
+      "dissolvedOxygen": 7.0
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-16T12:00:00+09:00",
+      "battery": 5.1,
+      "outsideTemp": 28.5,
+      "waterTemp": 26.1,
+      "conductivity": 5.37,
+      "salinity": 1.87,
+      "dissolvedOxygen": 6.8
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-17T12:00:00+09:00",
+      "battery": 5.03,
+      "outsideTemp": 28.3,
+      "waterTemp": 26.2,
+      "conductivity": 5.36,
+      "salinity": 1.91,
+      "dissolvedOxygen": 7.0
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-18T12:00:00+09:00",
+      "battery": 5.17,
+      "outsideTemp": 27.8,
+      "waterTemp": 26.5,
+      "conductivity": 5.32,
+      "salinity": 1.95,
+      "dissolvedOxygen": 7.2
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-19T12:00:00+09:00",
+      "battery": 5.21,
+      "outsideTemp": 28.0,
+      "waterTemp": 26.5,
+      "conductivity": 5.37,
+      "salinity": 1.93,
+      "dissolvedOxygen": 7.1
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-20T12:00:00+09:00",
+      "battery": 5.29,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.3,
+      "conductivity": 5.29,
+      "salinity": 1.96,
+      "dissolvedOxygen": 7.1
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-21T12:00:00+09:00",
+      "battery": 5.16,
+      "outsideTemp": 27.4,
+      "waterTemp": 26.2,
+      "conductivity": 5.3,
+      "salinity": 2.01,
+      "dissolvedOxygen": 7.1
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-22T12:00:00+09:00",
+      "battery": 5.11,
+      "outsideTemp": 26.8,
+      "waterTemp": 25.8,
+      "conductivity": 5.37,
+      "salinity": 2.02,
+      "dissolvedOxygen": 7.3
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-23T12:00:00+09:00",
+      "battery": 5.12,
+      "outsideTemp": 27.3,
+      "waterTemp": 25.9,
+      "conductivity": 5.38,
+      "salinity": 2.06,
+      "dissolvedOxygen": 7.4
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-24T12:00:00+09:00",
+      "battery": 5.05,
+      "outsideTemp": 26.9,
+      "waterTemp": 26.1,
+      "conductivity": 5.45,
+      "salinity": 2.01,
+      "dissolvedOxygen": 7.6
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-25T12:00:00+09:00",
+      "battery": 5.19,
+      "outsideTemp": 27.5,
+      "waterTemp": 26.2,
+      "conductivity": 5.44,
+      "salinity": 1.98,
+      "dissolvedOxygen": 7.5
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-26T12:00:00+09:00",
+      "battery": 5.25,
+      "outsideTemp": 27.3,
+      "waterTemp": 26.4,
+      "conductivity": 5.49,
+      "salinity": 2.01,
+      "dissolvedOxygen": 7.5
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-27T12:00:00+09:00",
+      "battery": 5.27,
+      "outsideTemp": 28.1,
+      "waterTemp": 26.0,
+      "conductivity": 5.47,
+      "salinity": 2.02,
+      "dissolvedOxygen": 7.7
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-28T12:00:00+09:00",
+      "battery": 5.07,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.1,
+      "conductivity": 5.46,
+      "salinity": 2.0,
+      "dissolvedOxygen": 7.9
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-29T12:00:00+09:00",
+      "battery": 5.1,
+      "outsideTemp": 28.2,
+      "waterTemp": 26.0,
+      "conductivity": 5.51,
+      "salinity": 2.01,
+      "dissolvedOxygen": 7.8
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-30T12:00:00+09:00",
+      "battery": 5.13,
+      "outsideTemp": 28.5,
+      "waterTemp": 26.2,
+      "conductivity": 5.49,
+      "salinity": 1.98,
+      "dissolvedOxygen": 7.7
+    },
+    {
+      "sensorId": "TEST-10245e8",
+      "timestamp": "2026-07-31T12:00:00+09:00",
+      "battery": 5.08,
+      "outsideTemp": 27.9,
+      "waterTemp": 26.3,
+      "conductivity": 5.43,
+      "salinity": 1.99,
+      "dissolvedOxygen": 7.8
+    }
+  ]
+}

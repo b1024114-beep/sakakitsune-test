@@ -226,6 +226,7 @@ export default function CompareSettingPage() {
     <PageLayout
       title="比較設定"
       showBackButton={true}
+      className="compare-setting-page"
     >
       {/* 設定エリア */}
       <section className="compare-setting-area">
@@ -530,7 +531,7 @@ export default function CompareSettingPage() {
               className="add-period-button"
               onClick={addPeriod}
             >
-              ＋期間を追加
+              ＋ 期間を追加
             </button>
 
           )}

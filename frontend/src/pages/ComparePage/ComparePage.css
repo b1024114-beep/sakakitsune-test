@@ -79,3 +79,38 @@
     align-items: center;
     background: white;
 }
+
+/* ダミーデータのお知らせ */
+.graph-notice {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background: #fff3cd;
+    border-top: 1px solid #f0c36d;
+    border-bottom: 1px solid #f0c36d;
+
+    padding: 8px 0;
+}
+
+/* 流れる文字 */
+.graph-notice-text {
+    display: inline-block;
+    white-space: nowrap;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    animation: graph-notice-scroll 20s linear infinite;
+}
+
+/* 右から左へ */
+@keyframes graph-notice-scroll {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

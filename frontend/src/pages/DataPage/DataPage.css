@@ -1,6 +1,9 @@
+.data-page-area {
+    padding-bottom: 60px;
+}
 /* 日付・時間表示 */
 .date-area {
-    height: 30vh;
+    height: 22vh;
     /* padding: 40px 20px; */
     background: var(--secondary);
     display: flex;
@@ -8,7 +11,7 @@
     align-items: center;
     text-align: center;
     position: relative;
-    /* min-height: 140px; */
+    min-height: 100px;
 }
 
 .date-icon {
@@ -26,7 +29,7 @@
 .sensor-data-area {
     flex: 1;
     background: var(--white);
-    padding: 20px;
+    padding: 10px 30px 0px 30px;
 }
 
 .data-area p {
@@ -43,7 +46,7 @@
 }
 
 .data-row span {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* カレンダーアイコンの色設定 */
@@ -55,8 +58,8 @@
 /* リロードボタン表示 */
 .reload-button {
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    right: 25px;
+    bottom: 20px;
 
     background: none;
     border: none;
@@ -69,13 +72,14 @@
 /*時間選択の見た目*/
 .time-select {
     background: var(--white);
-    font-size: 16px;
+    font-size: 25px;
     padding: 5px 10px;
     border: 1px solid var(--inactive);
+    margin-top: 5px;
 }
 
 .sensor-name {
-    font-size: 10px;
+    font-size: 18px;
     color: var(--inactive);
     margin-top: 1px;
 }

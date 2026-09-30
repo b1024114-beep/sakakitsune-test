@@ -5,7 +5,8 @@
   padding: 20px 0;                    /* 上下の余白 */
   display: flex;
   flex-direction: column;
-  gap: 0px;                          /* 項目と項目の間のすき間 */
+  gap: 0px;                    /* 項目と項目の間のすき間 */
+  padding-bottom: 60px;
 }
 
 /* 2. 1行ごとの設定 */
@@ -13,7 +14,7 @@
   display: flex;
   justify-content: space-between;     /* ★ラベルを左端、セレクトを右端に配置 */
   align-items: center;                /* 上下の中央揃え */
-  padding: 10px 24px;                 /* 左右に24pxの余白を作り、画面端から少し離す */
+  padding: 10px 24px;              /* 左右に24pxの余白を作り、画面端から少し離す */
 }
 
 /* 3. 左側のラベルテキスト */
@@ -44,7 +45,7 @@
 .setting-divider {
   border: none;
   border-top: 2px solid var(--primary); /* メインカラー（#3D76A4）の線 */
-  margin: 8px 24px;                     /* 左右の余白を他の行（24px）と揃える */
+  margin: 20px 24px;                     /* 左右の余白を他の行（24px）と揃える */
 }
 
 /* 5. 設定項目のタイトル（「センサー設定」など） */

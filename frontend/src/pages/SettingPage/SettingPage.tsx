@@ -3,12 +3,12 @@ import PageLayout from "@/components/PageLayout";
 import "./SettingPage.css";
 
 export default function SettingPage() {
-  
-   /*現在選択されている値を保存*/
+
+  /*現在選択されている値を保存*/
   const [doSensor, setDoSensor] = useState("DO01");
-  const [temperature, setTemperature] = useState("10.0");
-  const [salinity, setSalinity] = useState("25");
-  const [oxygen, setOxygen] = useState("0");
+  const [temperature, setTemperature] = useState("20.0");
+  const [salinity, setSalinity] = useState("30");
+  const [oxygen, setOxygen] = useState("6");
 
   /*ページを開いたとき、localStorageから読み込む*/
   useEffect(() => {
@@ -39,16 +39,16 @@ export default function SettingPage() {
     alert("設定を保存しました");
   };
 
-  
+
   return (
-    <PageLayout title="設定">
+    <PageLayout title="設定" className="setting-page">
       <div className="setting-page-container">
         {/* DOセンサ */}
         <div className="setting-row">
           <label>DOセンサ</label>
           <select
-              value={doSensor}
-              onChange={(e) => setDoSensor(e.target.value)}
+            value={doSensor}
+            onChange={(e) => setDoSensor(e.target.value)}
           >
             <option>DO01</option>
             <option>DO02</option>
@@ -61,24 +61,24 @@ export default function SettingPage() {
 
         {/* 適正値設定 */}
         <h2 className="setting-title">適正値設定</h2>
-        
+
         {/* 水温 */}
         <div className="setting-row">
           <label>水温</label>
           <select
-              value={temperature}
-              onChange={(e) => setTemperature(e.target.value)}
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
           >
             {/* 選択肢数指定 */}
             {Array.from({ length: 41 }, (_, i) => {
               // 0.5刻みで 10.0℃から30.0℃までの値を生成(小数点第一位まで表示)
               const value = (10 + i * 0.5).toFixed(1);
               return (
-              <option key={value} value={value}>
-                {value}℃
+                <option key={value} value={value}>
+                  {value}℃
                 </option>
-                );
-                })}
+              );
+            })}
           </select>
         </div>
 
@@ -86,17 +86,17 @@ export default function SettingPage() {
         <div className="setting-row">
           <label>塩分濃度</label>
           <select
-              value={salinity}
-              onChange={(e) => setSalinity(e.target.value)}
+            value={salinity}
+            onChange={(e) => setSalinity(e.target.value)}
           >
             {Array.from({ length: 11 }, (_, i) => {
               const value = 25 + i;
               return (
-              <option key={value} value={value}>
-                {value}‰
+                <option key={value} value={value}>
+                  {value}‰
                 </option>
-                );
-                })}
+              );
+            })}
           </select>
         </div>
 
@@ -104,25 +104,31 @@ export default function SettingPage() {
         <div className="setting-row">
           <label>溶存酸素</label>
           <select
-              value={oxygen}
-              onChange={(e) => setOxygen(e.target.value)}
+            value={oxygen}
+            onChange={(e) => setOxygen(e.target.value)}
           >
-            {Array.from({ length: 21 }, (_, i) => (
-              <option key={i} value={i}>
-                {i}mg/L
+
+
+            {Array.from({ length: 21 }, (_, i) => {
+              // 0.2刻みで 3.5mg/Lから7.5mg/Lまでの値を生成(小数点第一位まで表示)
+              const value = (3.5 + i * 0.2).toFixed(1);
+              return (
+                <option key={value} value={value}>
+                  {value}mg/L
                 </option>
-              ))}
+              );
+            })}
           </select>
         </div>
 
         {/* 保存ボタン */}
         <div className="save-button-area">
-         <button 
-             className="save-button"
-             onClick={handleSave}
-         >
-           保存
-         </button>
+          <button
+            className="save-button"
+            onClick={handleSave}
+          >
+            保存
+          </button>
         </div>
 
       </div>

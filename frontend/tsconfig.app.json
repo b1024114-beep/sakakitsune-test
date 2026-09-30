@@ -9,6 +9,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
@@ -21,10 +22,10 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
 
-    // ƒpƒXƒGƒCƒŠƒAƒXİ’è
+    // ï¿½pï¿½Xï¿½Gï¿½Cï¿½ï¿½ï¿½Aï¿½Xï¿½İ’ï¿½
     "paths": {
   "@/*": ["./src/*"]
 }
   },
-  "include": ["src"]
+  "include": ["src", "api"]
 }
