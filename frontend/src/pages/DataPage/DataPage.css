@@ -1,0 +1,194 @@
+
+.data-page-area {
+    padding-bottom: 60px;
+}
+
+/* 日付・時間表示 */
+.date-area {
+    height: 22vh;
+    background: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 100px;
+}
+
+.date-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.date-text {
+    font-size: 1.7rem;
+}
+
+/* データ一覧 */
+.sensor-data-area {
+    flex: 1;
+    background: var(--white);
+    padding: 10px 30px 0px 30px;
+
+    /* 個別エラーを項目内に重ねる */
+    position: relative;
+}
+
+.data-area p {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+/* 右にデータ（単位）を表示する */
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.data-row span {
+    font-size: 22px;
+}
+
+/* カレンダーアイコンの色設定 */
+.calendar-link {
+    color: var(--inactive);
+    text-decoration: none;
+}
+
+/* リロードボタン表示 */
+.reload-button {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--inactive);
+    cursor: pointer;
+}
+
+/* 時間選択の見た目 */
+.time-select {
+    background: var(--white);
+    font-size: 25px;
+    padding: 5px 10px;
+    border: 1px solid var(--inactive);
+    margin-top: 5px;
+}
+
+.sensor-name {
+    font-size: 18px;
+    color: var(--inactive);
+    margin-top: 1px;
+}
+
+/* ===== 欠損データ表示 ===== */
+
+/* 数値と注意メッセージを縦に並べる */
+.data-value-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    max-width: 65%;
+}
+
+/* 数値の表示サイズは通常時のまま */
+.data-row .data-value {
+    font-size: 22px;
+}
+
+/* エラーメッセージがあるときだけ間隔を縮める */
+.data-value-group.has-message {
+    gap: 0;
+}
+
+/* 過去データの注意メッセージ */
+.stale-message {
+    display: block;
+    max-width: 100%;
+    margin-top: 0;
+    color: #9a5700;
+    font-size: 16px !important;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+/* 個別項目のエラー */
+.field-error-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    max-width: 100%;
+    color: #b42318;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* エラーメッセージのカード */
+.error-message-card {
+    width: 100%;
+    max-width: 290px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: var(--white);
+    color: #b42318;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.error-message-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* 白いデータ一覧部分だけに全体エラーを重ねる */
+.data-area-error-overlay {
+    position: absolute;
+    top: 30vh;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.96);
+}
+
+/* 個別メッセージがある場合、行の下側の余白を詰める */
+.data-row.has-stale-message {
+  padding-bottom: 0;
+}
+
+/* 項目名と値の行全体の下にメッセージを配置 */
+.stale-message-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.25em;
+  margin-bottom: 0em;
+}
+
+/* 24時間以上データがない項目の行下の隙間を詰める */
+.data-row:has(+ .field-error-overlay) {
+    padding-bottom: 0;
+}
+
+/* 個別エラーメッセージの余白をなくす */
+.field-error-overlay {
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1.7;
+}

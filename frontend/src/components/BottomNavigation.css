@@ -1,0 +1,31 @@
+.bottom-navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10vh;
+
+    background-color: var(--primary);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 通常時のアイコン */
+.nav-item {
+    color: var(--inactive);
+    text-decoration: none;
+}
+
+/* 選択中のアイコン */
+.nav-item.active {
+    color: var(--active);
+}
+
+/* 地図ページを開いているときだけ設定アイコンを白色にする */
+.nav-item.map-page-settings,
+.nav-item.map-page-settings.active {
+    color: white;
+}

@@ -1,0 +1,28 @@
+.header {
+    height: 10vh;
+    background-color: var(--primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-white);
+
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+
+    border: none;
+    background: transparent;
+    color: var(--white);
+
+    cursor: pointer;
+}

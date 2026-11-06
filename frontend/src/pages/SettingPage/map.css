@@ -1,0 +1,146 @@
+/* 地図ページ全体 */
+.map-page {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  background-color: var(--secondary);
+  overflow-y: auto;
+}
+
+.map-area {
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.sensor-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* センサマーカー */
+.sensor-marker-wrapper {
+  background: transparent;
+  border: none;
+}
+
+/* DOセンサ */
+.sensor-marker {
+  width: 60px;
+  height: 36px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--white);
+  color: var(--text);
+
+  border: 3px solid var(--primary);
+  border-radius: 18px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  box-sizing: border-box;
+}
+
+/* 塩分センサ */
+.salinity-marker {
+  width: 60px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--text);
+  border: 4px solid #ef1a1a;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* 選択中のセンサ */
+.sensor-marker.selected {
+  background-color: var(--primary);
+  color: var(--white);
+
+  transform: scale(1.2);
+}
+
+/* 選択中のセンサ表示 */
+.selected-sensor {
+  text-align: center;
+
+  padding: 8px;
+
+  color: var(--text);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* OKボタン */
+.map-ok-button-area {
+  display: flex;
+  justify-content: center;
+
+  padding: 10px 24px 20px;
+}
+
+.map-ok-button {
+  width: 180px;
+  height: 50px;
+
+  background-color: var(--primary);
+  color: var(--text-white);
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.map-ok-button:hover {
+  opacity: 0.9;
+}
+
+/* センサの緯度・経度一覧 */
+
+.sensor-location-list {
+  padding: 0 24px 20px;
+}
+
+.sensor-location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.sensor-location strong {
+  width: 50px;
+  font-size: 16px;
+}
+
+.sensor-location span {
+  white-space: nowrap;
+}
+
+.page-content:has(.map-page) {
+  padding-bottom: 0;
+}
+
+.sensor-data-time {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  color: var(--text);
+  font-size: 14px;
+}

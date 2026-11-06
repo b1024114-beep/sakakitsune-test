@@ -1,0 +1,19 @@
+:root {
+    /* メインカラー */
+    --primary: #3D76A4;
+    --secondary: #BAE0FF;
+    --white: #FFFFFF;
+
+    /*　カレンダーカラー */
+    --cblue: #3182ce;
+    --cred:#e53e3e;
+    --cblack:#2d3748;
+
+    /* アイコン */
+    --inactive: #000000;
+    --active: #FFFFFF;
+
+    /* 文字 */
+    --text: #000000;
+    --text-white: #FFFFFF;
+}

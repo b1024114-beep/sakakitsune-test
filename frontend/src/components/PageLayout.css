@@ -1,0 +1,29 @@
+.page {
+    display: flex;
+    flex-direction: column;
+
+    /* 最低でも高さ90、あとは内容に合わせて自動で長さを調整 */
+    height: calc(90vh);
+}
+
+.page-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    background-color: var(--white);
+
+    padding-bottom: 10vh;
+}
+
+/* 設定画面だけ背景水色 */
+.setting-page .page-content {
+    background-color: var(--secondary);
+}
+
+/* 比較設定画面だけ背景水色 */
+.compare-setting-page .page-content {
+    background-color: var(--secondary);
+}
