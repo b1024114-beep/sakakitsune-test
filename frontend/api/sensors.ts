@@ -127,17 +127,34 @@ async function fetchAllRows(
   const allRows: DbRow[] = [];
   const pageSize = 1000;
 
-  const start = date
-    ? new Date(`${date}T00:00:00+09:00`).toISOString()
-    : null;
+    let start: string | null = null;
+  let end: string | null = null;
 
-  const end = date
-    ? new Date(
-        new Date(`${date}T00:00:00+09:00`).getTime() +
-          24 * 60 * 60 * 1000
-      ).toISOString()
-    : null;
+  if (date) {
+    let startDate: Date;
+    let endDate: Date;
 
+    if (/^\d{4}$/.test(date)) {
+      // 年単位：2026 → 2026年1月1日～2027年1月1日
+      const year = Number(date);
+      startDate = new Date(`${year}-01-01T00:00:00+09:00`);
+      endDate = new Date(`${year + 1}-01-01T00:00:00+09:00`);
+    } else if (/^\d{4}-\d{2}$/.test(date)) {
+      // 月単位：2026-10 → 2026年10月1日～11月1日
+      const [year, month] = date.split("-").map(Number);
+      startDate = new Date(`${date}-01T00:00:00+09:00`);
+      endDate = new Date(
+        `${year + (month === 12 ? 1 : 0)}-${String(month === 12 ? 1 : month + 1).padStart(2, "0")}-01T00:00:00+09:00`
+      );
+    } else {
+      // 日単位：2026-10-15 → その日1日分
+      startDate = new Date(`${date}T00:00:00+09:00`);
+      endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+    }
+
+    start = startDate.toISOString();
+    end = endDate.toISOString();
+  }
   for (let offset = 0; ; offset += pageSize) {
     let query = supabase
       .from("sensor_readings")
@@ -226,13 +243,13 @@ export default async function handler(req: any, res: any) {
     req.query.positionsOnly === "1";
 
   if (
-    date &&
-    !/^\d{4}-\d{2}-\d{2}$/.test(date)
-  ) {
-    return res.status(400).json({
-      error: "日付の形式が正しくありません。",
-    });
-  }
+  date &&
+  !/^(\d{4}|\d{4}-\d{2}|\d{4}-\d{2}-\d{2})$/.test(date)
+) {
+  return res.status(400).json({
+    error: "日付の形式が正しくありません。",
+  });
+}
 
   try {
     // 最新位置だけを取得
