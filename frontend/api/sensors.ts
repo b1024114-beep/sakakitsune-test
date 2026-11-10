@@ -92,6 +92,16 @@ function convertGPS(
   };
 }
 
+function toNullableNumber(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") {
+    return null;
+  }
+
+  const number = Number(value);
+
+  return Number.isFinite(number) ? number : null;
+}
+
 // UTCの日時をJSTの分単位に変換
 function toJstKey(value: string): string {
   const date = new Date(value);
@@ -314,22 +324,22 @@ export default async function handler(req: any, res: any) {
         const record = recordMap.get(key)!;
 
         if (row.sensor_id === "salinity") {
-          record.waterTemp = row.water_temp;
-          record.outsideTemp = row.outside_temp;
-          record.salinity = row.salinity;
-        }
+  record.waterTemp = toNullableNumber(row.water_temp);
+  record.outsideTemp = toNullableNumber(row.outside_temp);
+  record.salinity = toNullableNumber(row.salinity);
+}
 
-        if (row.sensor_id === "do1") {
-          record.oxygen1 = row.do_mgl;
-        }
+if (row.sensor_id === "do1") {
+  record.oxygen1 = toNullableNumber(row.do_mgl);
+}
 
-        if (row.sensor_id === "do2") {
-          record.oxygen2 = row.do_mgl;
-        }
+if (row.sensor_id === "do2") {
+  record.oxygen2 = toNullableNumber(row.do_mgl);
+}
 
-        if (row.sensor_id === "do3") {
-          record.oxygen3 = row.do_mgl;
-        }
+if (row.sensor_id === "do3") {
+  record.oxygen3 = toNullableNumber(row.do_mgl);
+}
 
         if (hasPosition(row)) {
           const gps = convertGPS(
