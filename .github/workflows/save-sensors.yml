@@ -1,11 +1,14 @@
 
-name: Sensor Data Test
+name: Save Sensor Data
 
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "*/30 * * * *"
+
 jobs:
-  test-sensor-data:
+  save-sensor-data:
     runs-on: ubuntu-latest
 
     defaults:
@@ -26,9 +29,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test CSV collection
+      - name: Check environment variables
+        run: |
+          test -n "$SUPABASE_URL" && echo "SUPABASE_URL: OK" || echo "SUPABASE_URL: MISSING"
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" && echo "SUPABASE_SERVICE_ROLE_KEY: OK" || echo "SUPABASE_SERVICE_ROLE_KEY: MISSING"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Save sensor data to Supabase
         run: node scripts/save-sensors.mjs
         env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SALINITY_API_URL: ${{ secrets.SALINITY_API_URL }}
           DO1_API_URL: ${{ secrets.DO1_API_URL }}
           DO3_API_URL: ${{ secrets.DO3_API_URL }}
