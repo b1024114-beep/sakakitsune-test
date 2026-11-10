@@ -82,20 +82,13 @@ export default function CompareScatter({
           settings.periods.map(async (period) => {
             let date = "";
 
-            // 日：その日のデータを取得
-            if (settings.graphPeriod === "day") {
-              date = `${period.year}-${String(
-                period.month
-              ).padStart(2, "0")}-${String(
-                period.day
-              ).padStart(2, "0")}`;
-            } else if (settings.graphPeriod === "month") {
-              date = `${period.year}-${String(
-                period.month
-              ).padStart(2, "0")}`;
-            } else if (settings.graphPeriod === "year") {
-              date = String(period.year);
-            }
+if (settings.graphPeriod === "day") {
+  date = `${period.year}-${String(period.month).padStart(2, "0")}-${String(period.day).padStart(2, "0")}`;
+} else if (settings.graphPeriod === "month") {
+  date = `${period.year}-${String(period.month).padStart(2, "0")}-01`;
+} else if (settings.graphPeriod === "year") {
+  date = `${period.year}-01-01`;
+}
 
             const response = await fetch(
               `/api/sensors?date=${date}`

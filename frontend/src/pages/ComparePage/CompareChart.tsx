@@ -107,21 +107,19 @@ export default function CompareChart({
   useEffect(() => {
     let cancelled = false;
 
-    const getDateQuery = (
-      period: CompareSettings["periods"][number]
-    ) => {
-      const year = period.year;
-      const month = String(period.month).padStart(2, "0");
-      const day = String(period.day).padStart(2, "0");
+    const getDateQuery = (period: (typeof periods)[number]) => {
+  const year = period.year;
+  const month = String(period.month).padStart(2, "0");
+  const day = String(period.day).padStart(2, "0");
 
-      if (graphPeriod === "day") {
-        return `${year}-${month}-${day}`;
-      } else if (graphPeriod === "month") {
-        return `${year}-${month}`;
-      } else {
-        return String(year);
-      }
-    };
+  if (graphPeriod === "day") {
+    return `${year}-${month}-${day}`;
+  } else if (graphPeriod === "month") {
+    return `${year}-${month}-01`;
+  } else {
+    return `${year}-01-01`;
+  }
+};
 
     if (periods.length === 0) {
       setSensorData({});
