@@ -85,9 +85,9 @@ export default function CompareScatter({
 if (settings.graphPeriod === "day") {
   date = `${period.year}-${String(period.month).padStart(2, "0")}-${String(period.day).padStart(2, "0")}`;
 } else if (settings.graphPeriod === "month") {
-  date = `${period.year}-${String(period.month).padStart(2, "0")}-01`;
+  date = `${period.year}-${String(period.month).padStart(2, "0")}`;
 } else if (settings.graphPeriod === "year") {
-  date = `${period.year}-01-01`;
+  date = String(period.year);
 }
 
             const response = await fetch(

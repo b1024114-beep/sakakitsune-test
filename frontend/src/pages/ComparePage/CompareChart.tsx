@@ -104,22 +104,23 @@ export default function CompareChart({
   };
 
   // 選択した期間のデータを取得
-  useEffect(() => {
-    let cancelled = false;
+  // 選択した期間のデータを取得
+useEffect(() => {
+  let cancelled = false;
 
-    const getDateQuery = (period: (typeof periods)[number]) => {
-  const year = period.year;
-  const month = String(period.month).padStart(2, "0");
-  const day = String(period.day).padStart(2, "0");
+  const getDateQuery = (period: (typeof periods)[number]) => {
+    const year = period.year;
+    const month = String(period.month).padStart(2, "0");
+    const day = String(period.day).padStart(2, "0");
 
-  if (graphPeriod === "day") {
-    return `${year}-${month}-${day}`;
-  } else if (graphPeriod === "month") {
-    return `${year}-${month}-01`;
-  } else {
-    return `${year}-01-01`;
-  }
-};
+    if (graphPeriod === "day") {
+      return `${year}-${month}-${day}`;
+    } else if (graphPeriod === "month") {
+      return `${year}-${month}`;
+    } else {
+      return `${year}`;
+    }
+  };
 
     if (periods.length === 0) {
       setSensorData({});
