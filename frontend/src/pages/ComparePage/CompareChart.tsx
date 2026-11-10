@@ -347,7 +347,7 @@ const hasNoData =
         sensorType === "salt"
           ? 35
           : sensorType === "oxygen"
-            ? 9
+            ? 13
             : undefined,
       interval:
         sensorType === "salt" || sensorType === "oxygen"
