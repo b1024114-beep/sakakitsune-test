@@ -44,4 +44,5 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SALINITY_API_URL: ${{ secrets.SALINITY_API_URL }}
           DO1_API_URL: ${{ secrets.DO1_API_URL }}
+          DO2_API_URL: ${{ secrets.DO2_API_URL }}
           DO3_API_URL: ${{ secrets.DO3_API_URL }}
