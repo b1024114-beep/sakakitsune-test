@@ -106,7 +106,7 @@ async function main() {
         headers: {
           "User-Agent": "sensor-data-collector/1.0",
         },
-        signal: AbortSignal.timeout(30000),
+        signal: AbortSignal.timeout(90000),
       });
 
       if (!response.ok) {
